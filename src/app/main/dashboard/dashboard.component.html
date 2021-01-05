@@ -1,0 +1,292 @@
+<div id="dashboard-analytics" class="page-layout blank">
+    <div class="content">
+        <div class="left mr-lg-32">
+            <div fxLayout="column" fxLayoutAlign="start" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start">
+                <div id="orders" class="page-layout carded fullwidth ">
+                    <!-- TOP BACKGROUND -->
+                    <div class="top-bg accent"></div>
+                    <!-- / TOP BACKGROUND -->
+                    <!-- CENTER -->
+                    <div class="center">
+                        <!-- HEADER -->
+                        <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+                            fxLayoutAlign.gt-xs="space-between center">
+                            <!-- APP TITLE -->
+                            <div class="logo mb-24 mb-sm-0" fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon class="logo-icon s-32 mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                                    shopping_basket
+                                </mat-icon>
+                                <span class="logo-text h1"
+                                    [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">Subscriptions</span>
+                            </div>
+
+                            <!-- / SEARCH -->
+                            <button mat-raised-button [routerLink]="'/library/available-books-list-Pdf'"
+                                class="btn_top_add fuse-white mt-24 mt-md-0">
+                                <span></span>
+                            </button>
+
+                        </div>
+                        <!-- / HEADER -->
+                        <div class="content-card">
+                             <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <h2>&nbsp;&nbsp;<strong>Activations</strong></h2>
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Today</p>
+
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;156
+                                            </h3>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Yesterday</p>
+                                        
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;     455   
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <h2>&nbsp;&nbsp;<strong>Free Trials</strong></h2>
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Today</p>
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;156      
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Yesterday</p>
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;455
+                                                
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                             </div>
+
+
+                             <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <h2>&nbsp;&nbsp;<strong>Customers</strong></h2>
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Today</p>
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;156
+                                              
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;Yesterday</p>
+                                             <h3 class="card-title"> &nbsp;&nbsp;&nbsp;455
+                                                
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card card-stats"> 
+                                        <div class="card-header card-header-warning card-header-icon">
+                                            <h2>&nbsp;&nbsp;<strong>Refunds</strong></h2>
+                                            <div class="card-icon">
+                                                <i class="material-icons">content_copy</i>
+                                            </div>
+                                            <p class="card-category">&nbsp;&nbsp;&nbsp;This Month</p>
+
+                                            <h3 class="card-title"> &nbsp;&nbsp;&nbsp;156
+                                              
+                                            </h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                             </div>  -->
+                             <mat-card-title mt-10>&nbsp;&nbsp;Activations</mat-card-title>
+                             <mat-grid-list cols="4" rowHeight="100px">
+                                <mat-grid-tile
+                                    *ngFor="let tile of tiles"
+                                    [colspan]="tile.cols"
+                                    [rowspan]="tile.rows"
+                                    [style.background]="tile.color">
+                                  <h3>{{tile.text}}<br>
+                                 {{tile.no}}</h3>
+                              </mat-grid-tile>
+                            </mat-grid-list>
+
+                              <mat-form-field appearance="fill">
+                                <mat-label>Today</mat-label>
+                                <mat-select [(value)]="selected">
+                                  <mat-option>Today</mat-option>
+                                  <mat-option value="option1">This Week</mat-option>
+                                  <mat-option value="option2">This Month</mat-option>
+                                  <mat-option value="option3">This Yearly</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                              <mat-card-title>&nbsp;&nbsp;Free Trials</mat-card-title>
+                              <mat-grid-list cols="4" rowHeight="100px">
+                                 <mat-grid-tile
+                                     *ngFor="let tile of tiles"
+                                     [colspan]="tile.cols"
+                                     [rowspan]="tile.rows"
+                                     [style.background]="tile.color">
+                                     <h3>{{tile.text}}<br>
+                                        {{tile.no}}</h3>
+                               </mat-grid-tile>
+                               </mat-grid-list>
+
+                               <mat-form-field appearance="fill">
+                                <mat-label>Today</mat-label>
+                                <mat-select [(value)]="selected">
+                                  <mat-option>Today</mat-option>
+                                  <mat-option value="option4">This Week</mat-option>
+                                  <mat-option value="option5">This Month</mat-option>
+                                  <mat-option value="option6">This Yearly</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+
+                            <mat-card-title mt-10>&nbsp;&nbsp;Customers</mat-card-title>
+                               <mat-grid-list cols="4" rowHeight="100px">
+                                  <mat-grid-tile
+                                      *ngFor="let cust of customers" 
+                                      [colspan]="cust.cols"
+                                      [rowspan]="cust.rows"
+                                      [style.background]="cust.color">
+                                      <h3>{{cust.title}}<br>
+                                        {{cust.lno}}</h3>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                            <mat-divider></mat-divider>
+
+                                <mat-card-title mt-10>&nbsp;&nbsp;Refunds</mat-card-title>
+                                <mat-grid-list cols="4" rowHeight="100px">
+                                   <mat-grid-tile
+                                       *ngFor="let ref of refunds" 
+                                       [colspan]="ref.cols"
+                                       [rowspan]="ref.rows"
+                                       [style.background]="ref.color">
+                                       <h3>{{ref.title}}<br>
+                                        {{ref.rno}}</h3>
+                                   </mat-grid-tile>
+                                </mat-grid-list>
+                                <mat-divider></mat-divider>
+
+                                <mat-card-title mt-10>&nbsp;&nbsp;Net Revenue</mat-card-title>
+                                <mat-card-subtitle style="margin-left:12px;"><strong>$1.02 M</strong></mat-card-subtitle>
+                                <mat-grid-list cols="4" rowHeight="100px">
+                                   <mat-grid-tile
+                                       *ngFor="let net of newrevenue" 
+                                       [colspan]="net.cols"
+                                       [rowspan]="net.rows"
+                                       [style.background]="net.color">
+                                       <h3>{{net.title}}<br>
+                                        {{net.rno}}</h3>
+                                 </mat-grid-tile>
+                                </mat-grid-list>
+                                
+                                <!--chart-->
+                                <div class="chart-wrapper">
+                                    <canvas baseChart 
+                                    [datasets]="barChartData"
+                                    [labels]="barChartLabels"
+                                    [options]="barChartOptions"
+                                    [plugins]="barChartPlugins"
+                                    [legend]="barChartLegend"
+                                    [chartType]="barChartType">
+                                  </canvas>
+                                <mat-divider></mat-divider>
+                                
+                                <mat-card-title mt-10>&nbsp;&nbsp;MRR(Monthly Recurring Revenue)</mat-card-title><br>
+                                <mat-card-subtitle style="margin-left:12px;"><strong>$1.02 M</strong></mat-card-subtitle>
+                                <mat-card-subtitle style="margin-left:12px;">Last 12 Months</mat-card-subtitle>
+                                <!-- <mat-divider></mat-divider> -->
+
+                        </div>
+
+
+                        <!-- / CONTENT CARD -->
+                    </div>
+                    <!-- / CENTER -->
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="right">
+
+            <div fxLayout="row wrap" fxLayout.gt-md="column">
+                <div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+                    <!-- <div class="pb-24 font-size-18 font-weight-300">
+                        {{'sessionInfo' |translate}}
+                    </div> -->
+
+                    <!-- <div class="fuse-card">
+
+                        <div class="px-24 py-16">
+                            <div class="h1 font-weight-300">{{'academicyearandTerm' |translate}}</div>
+                        </div>
+                        <div class="px-24 ">
+                            <div class="h2 font-weight-300 py-8">{{'academicYear' |translate}}:</div>
+                            <div class="h3 font-weight-300 py-8">{{academicYear?.start_date}} {{'to' |translate}}
+                                {{academicYear?.end_date}}</div>
+                            <div class="h2 font-weight-300 py-8">{{'termName' |translate}}: {{termDetails?.name}}</div>
+                            <div class="h3 font-weight-300 py-8">{{termDetails?.start_date}} {{'to' |translate}}
+                                {{termDetails?.end_date}}</div>
+                        </div>
+                        <div class="card-divider mb-0"></div>
+                        <div class="p-24" fxLayout="row" fxLayoutAlign="space-between center">
+                            <button mat-raised-button color="accent"
+                                (click)="changeSession()">{{'changeSession' | translate}}</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
